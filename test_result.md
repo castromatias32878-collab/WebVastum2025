@@ -107,39 +107,48 @@ user_problem_statement: "Landing page para software de gestión de residuos VAST
 backend:
   - task: "API endpoint POST /api/contacto para crear contacto"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/routes/contact_routes.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implementado endpoint POST /api/contacto con validaciones para nombre, email, teléfono, empresa y tipoEmpresa. Guarda en colección MongoDB 'contactos'."
+      - working: true
+        agent: "testing"
+        comment: "✅ PASSED - Comprehensive testing completed. All validations working correctly: 1) Successfully creates contacts with valid data, 2) Correctly rejects missing required fields (nombre, email, telefono, empresa, tipoEmpresa), 3) Validates email format properly, 4) Validates company types against allowed values ['Municipalidad', 'Empresa Privada', 'Cooperativa', 'Organismo Provincial', 'Otro'], 5) Handles optional message field correctly, 6) Returns proper response structure with success=true and contact ID. MongoDB integration working - 7 test contacts created successfully."
   
   - task: "API endpoint GET /api/contactos para listar contactos"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/routes/contact_routes.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implementado endpoint GET /api/contactos que retorna todos los contactos ordenados por fecha de creación descendente."
+      - working: true
+        agent: "testing"
+        comment: "✅ PASSED - Endpoint working correctly. Returns proper response structure with success=true, contactos array, and total count. Contacts are correctly sorted by created_at in descending order. Retrieved 7 contacts successfully during testing."
   
   - task: "Modelo Contact con validaciones Pydantic"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/models/contact.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Creado modelo Contact con ContactCreate para validar datos de entrada. Incluye validación de email con EmailStr y campos obligatorios."
+      - working: true
+        agent: "testing"
+        comment: "✅ PASSED - Pydantic models working perfectly. ContactCreate model validates all required fields (nombre, email, telefono, empresa, tipoEmpresa) and optional mensaje field. EmailStr validation working correctly - rejects invalid email formats. Field length validations working (min_length constraints). Contact model generates UUIDs correctly and handles datetime serialization properly."
 
 frontend:
   - task: "Formulario de contacto integrado con backend"
