@@ -101,3 +101,74 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Landing page para software de gestión de residuos VASTUM con formulario de contacto que guarda datos en base de datos MongoDB"
+
+backend:
+  - task: "API endpoint POST /api/contacto para crear contacto"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/routes/contact_routes.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Implementado endpoint POST /api/contacto con validaciones para nombre, email, teléfono, empresa y tipoEmpresa. Guarda en colección MongoDB 'contactos'."
+  
+  - task: "API endpoint GET /api/contactos para listar contactos"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/routes/contact_routes.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Implementado endpoint GET /api/contactos que retorna todos los contactos ordenados por fecha de creación descendente."
+  
+  - task: "Modelo Contact con validaciones Pydantic"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/models/contact.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Creado modelo Contact con ContactCreate para validar datos de entrada. Incluye validación de email con EmailStr y campos obligatorios."
+
+frontend:
+  - task: "Formulario de contacto integrado con backend"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/pages/Home.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Integrado formulario con axios para hacer POST a /api/contacto. Incluye manejo de errores y mensajes de éxito/error con toast."
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "API endpoint POST /api/contacto para crear contacto"
+    - "API endpoint GET /api/contactos para listar contactos"
+    - "Modelo Contact con validaciones Pydantic"
+  stuck_tasks: []
+  test_all: true
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Backend implementado con modelo Contact y endpoints /api/contacto (POST) y /api/contactos (GET). Frontend integrado con axios. Por favor probar: 1) Crear contacto con datos válidos, 2) Validaciones de campos requeridos, 3) Validación de email, 4) Verificar que datos se guarden en MongoDB, 5) Obtener lista de contactos. Base de datos: MongoDB colección 'contactos'."
