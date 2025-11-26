@@ -162,6 +162,9 @@ frontend:
       - working: "NA"
         agent: "main"
         comment: "Integrado formulario con axios para hacer POST a /api/contacto. Incluye manejo de errores y mensajes de éxito/error con toast."
+      - working: "NA"
+        agent: "main"
+        comment: "Iniciando testing automatizado del frontend. Probar navegación, formulario de contacto, validaciones, envío exitoso, y mensajes de error."
 
 metadata:
   created_by: "main_agent"
