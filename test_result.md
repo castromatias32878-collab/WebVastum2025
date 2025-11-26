@@ -170,12 +170,9 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus:
-    - "API endpoint POST /api/contacto para crear contacto"
-    - "API endpoint GET /api/contactos para listar contactos"
-    - "Modelo Contact con validaciones Pydantic"
+  current_focus: []
   stuck_tasks: []
-  test_all: true
+  test_all: false
   test_priority: "high_first"
 
 agent_communication:
