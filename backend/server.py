@@ -25,6 +25,9 @@ app = FastAPI()
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
+# Import contact routes
+from routes.contact_routes import router as contact_router
+
 
 # Define Models
 class StatusCheck(BaseModel):
