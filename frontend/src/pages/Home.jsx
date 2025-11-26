@@ -53,7 +53,7 @@ const Home = () => {
     setFormData(prev => ({ ...prev, tipoEmpresa: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Validación básica
@@ -62,19 +62,27 @@ const Home = () => {
       return;
     }
 
-    // Simulación de envío
-    console.log('Formulario enviado:', formData);
-    toast.success('¡Gracias por contactarnos! Nos comunicaremos pronto.');
-    
-    // Limpiar formulario
-    setFormData({
-      nombre: '',
-      email: '',
-      telefono: '',
-      empresa: '',
-      tipoEmpresa: '',
-      mensaje: ''
-    });
+    try {
+      const response = await axios.post(`${API}/contacto`, formData);
+      
+      if (response.data.success) {
+        toast.success('¡Gracias por contactarnos! Nos comunicaremos pronto.');
+        
+        // Limpiar formulario
+        setFormData({
+          nombre: '',
+          email: '',
+          telefono: '',
+          empresa: '',
+          tipoEmpresa: '',
+          mensaje: ''
+        });
+      }
+    } catch (error) {
+      console.error('Error al enviar formulario:', error);
+      const errorMessage = error.response?.data?.detail || 'Error al enviar el formulario. Por favor intenta nuevamente.';
+      toast.error(errorMessage);
+    }
   };
 
   return (
