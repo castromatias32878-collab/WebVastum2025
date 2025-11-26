@@ -183,3 +183,5 @@ agent_communication:
     message: "Backend implementado con modelo Contact y endpoints /api/contacto (POST) y /api/contactos (GET). Frontend integrado con axios. Por favor probar: 1) Crear contacto con datos válidos, 2) Validaciones de campos requeridos, 3) Validación de email, 4) Verificar que datos se guarden en MongoDB, 5) Obtener lista de contactos. Base de datos: MongoDB colección 'contactos'."
   - agent: "testing"
     message: "🎉 BACKEND TESTING COMPLETED SUCCESSFULLY - All 24 tests passed! Both POST /api/contacto and GET /api/contactos endpoints are working perfectly. All validations implemented correctly: required fields, email format, company type validation, and MongoDB integration. Created comprehensive test suite in /app/backend_test.py for future testing. Backend is production-ready for VASTUM contact management system."
+  - agent: "main"
+    message: "Usuario solicitó testing automatizado del frontend. Procediendo con pruebas de UI, formulario de contacto, validaciones en navegador, integración con backend y flujo completo de envío de contacto."
