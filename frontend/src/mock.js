@@ -1,79 +1,196 @@
-// Mock data para VASTUM - Software de Gestión de Residuos
+// Mock data para VASTUM - Software ERP de Gestión de Residuos
 
 export const mockData = {
   hero: {
     title: "VASTUM",
-    subtitle: "Software de Gestión de Residuos",
-    description: "La solución integral para la gestión eficiente de residuos en tu ciudad. Optimiza rutas, controla recolección y mejora el servicio a la comunidad.",
+    subtitle: "Software ERP de Gestión de Residuos",
+    tagline: "Mucho más que un Software de Gestión",
+    question1: "¿Qué necesita tu empresa para crecer?",
+    question2: "¿Para ser más rentable?",
+    description: "La solución integral ERP para empresas de gestión de residuos. Optimiza operaciones, aumenta rentabilidad y escala tu negocio.",
     cta: "Solicitar Demo",
-    image: "https://images.unsplash.com/photo-1608425066267-dd6f4e0cf390"
+    ctaSecondary: "Conocer Soluciones",
+    image: "https://images.unsplash.com/photo-1608425066267-dd6f4e0cf390",
+    videoLabel: "VER DEMO"
   },
+
+  stats: [
+    { value: "500+", label: "Empresas Confiando" },
+    { value: "15+", label: "Años de Experiencia" },
+    { value: "50+", label: "Funcionalidades" },
+    { value: "24/7", label: "Soporte Técnico" }
+  ],
+
+  clients: [
+    { name: "Cliente 1", logo: "" },
+    { name: "Cliente 2", logo: "" },
+    { name: "Cliente 3", logo: "" },
+    { name: "Cliente 4", logo: "" }
+  ],
 
   features: [
     {
       id: 1,
-      icon: "MapPin",
-      title: "Gestión de Rutas",
-      description: "Optimiza las rutas de recolección con algoritmos inteligentes. Reduce costos operativos y tiempos de recorrido."
+      icon: "Truck",
+      title: "Gestión de Flota",
+      description: "Control total de tu flota de vehículos. Monitoreo en tiempo real, mantenimiento preventivo, consumo de combustible y rendimiento operativo.",
+      image: "https://images.unsplash.com/photo-1574974671999-24b7dfbb0d53"
     },
     {
       id: 2,
-      icon: "Truck",
-      title: "Control de Flota",
-      description: "Monitoreo en tiempo real de vehículos, mantenimiento y disponibilidad de tu flota de recolección."
+      icon: "Users",
+      title: "Gestión de Clientes",
+      description: "Administra tu cartera de clientes, contratos, frecuencias de servicio y facturación recurrente. CRM integrado para fortalecer relaciones comerciales.",
+      image: "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9"
     },
     {
       id: 3,
-      icon: "Users",
-      title: "Gestión de Personal",
-      description: "Administra equipos, turnos y asignaciones de personal de manera eficiente y organizada."
+      icon: "MapPin",
+      title: "Optimización de Rutas",
+      description: "Algoritmos inteligentes para planificar rutas eficientes. Reduce costos operativos, tiempo de recorrido y mejora la productividad de tu flota.",
+      image: "https://images.unsplash.com/photo-1610307563697-137f8cafad37"
     },
     {
       id: 4,
       icon: "BarChart3",
-      title: "Reportes y Estadísticas",
-      description: "Dashboards intuitivos con métricas clave para la toma de decisiones informadas."
+      title: "Business Intelligence",
+      description: "Dashboards personalizables con métricas clave del negocio. Analiza rentabilidad por cliente, servicio y ruta. Toma decisiones basadas en datos.",
+      image: "https://images.unsplash.com/photo-1614201756100-1ccde6a6589e"
     },
     {
       id: 5,
-      icon: "Recycle",
-      title: "Gestión de Reciclaje",
-      description: "Control completo del proceso de reciclaje, separación y valorización de residuos."
+      icon: "FileText",
+      title: "Facturación Automatizada",
+      description: "Genera facturas automáticas según frecuencia de servicio. Integración con sistemas contables. Facturación electrónica AFIP.",
+      image: "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9"
     },
     {
       id: 6,
-      icon: "Bell",
-      title: "Alertas y Notificaciones",
-      description: "Sistema de alertas para incidencias, mantenimiento y eventos importantes del servicio."
+      icon: "Recycle",
+      title: "Trazabilidad de Residuos",
+      description: "Seguimiento completo desde recolección hasta disposición final. Cumplimiento de normativas ambientales y generación de manifiestos.",
+      image: "https://images.unsplash.com/photo-1614201756100-1ccde6a6589e"
+    }
+  ],
+
+  solutions: [
+    {
+      id: 1,
+      title: "ERP Básico",
+      subtitle: "Para empresas en crecimiento",
+      description: "Gestión de rutas, clientes y facturación básica",
+      modules: [
+        "Gestión de Clientes",
+        "Planificación de Rutas",
+        "Facturación Básica",
+        "Reportes Operativos"
+      ],
+      cta: "Conocer más"
+    },
+    {
+      id: 2,
+      title: "ERP Profesional",
+      subtitle: "Para empresas establecidas",
+      description: "Solución completa con gestión de flota y BI",
+      modules: [
+        "Todo lo de Básico",
+        "Gestión de Flota",
+        "Business Intelligence",
+        "Facturación Automática",
+        "CRM Avanzado",
+        "App Móvil"
+      ],
+      cta: "Solicitar Demo",
+      featured: true
+    },
+    {
+      id: 3,
+      title: "ERP Enterprise",
+      subtitle: "Para grandes operaciones",
+      description: "Máxima personalización y escalabilidad",
+      modules: [
+        "Todo lo de Profesional",
+        "Múltiples Sucursales",
+        "Integraciones API",
+        "Soporte Premium 24/7",
+        "Capacitación Continua",
+        "Consultoría Personalizada"
+      ],
+      cta: "Contactar Ventas"
     }
   ],
 
   benefits: [
     {
       id: 1,
-      title: "Reducción de Costos",
-      description: "Optimiza recursos y reduce hasta un 30% los costos operativos mediante rutas eficientes y mejor planificación.",
-      image: "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9"
+      title: "Aumenta tu Rentabilidad",
+      description: "Optimiza costos operativos hasta un 35% mediante rutas eficientes, mejor gestión de combustible y reducción de tiempos muertos. Mejora tus márgenes y rentabilidad por cliente.",
+      icon: "TrendingUp"
     },
     {
       id: 2,
-      title: "Mejora del Servicio",
-      description: "Aumenta la satisfacción ciudadana con un servicio más confiable, puntual y transparente.",
-      image: "https://images.unsplash.com/photo-1574974671999-24b7dfbb0d53"
+      title: "Escala tu Negocio",
+      description: "Infraestructura preparada para crecer. Agrega nuevos clientes, vehículos y rutas sin complicaciones. Sistema multi-sucursal para expansión geográfica.",
+      icon: "Zap"
     },
     {
       id: 3,
-      title: "Sustentabilidad Ambiental",
-      description: "Contribuye al cuidado del medio ambiente con gestión responsable y trazabilidad de residuos.",
-      image: "https://images.unsplash.com/photo-1614201756100-1ccde6a6589e"
+      title: "Toma Mejores Decisiones",
+      description: "Información en tiempo real y reportes inteligentes. Identifica servicios más rentables, clientes estratégicos y oportunidades de mejora operativa.",
+      icon: "Target"
+    }
+  ],
+
+  testimonials: [
+    {
+      id: 1,
+      name: "Roberto Fernández",
+      position: "Director Operaciones",
+      company: "EcoGestión SRL",
+      text: "VASTUM transformó nuestra operación. La optimización de rutas redujo nuestros costos de combustible en 30% y mejoramos la satisfacción de clientes.",
+      avatar: ""
+    },
+    {
+      id: 2,
+      name: "María Rodríguez",
+      position: "Gerente General",
+      company: "Residuos Industriales SA",
+      text: "El control de flota y la facturación automatizada nos permitió crecer sin contratar personal adicional. Ahora gestionamos el triple de clientes.",
+      avatar: ""
+    },
+    {
+      id: 3,
+      name: "Carlos Gómez",
+      position: "CEO",
+      company: "Reciclaje del Norte",
+      text: "La trazabilidad completa nos ayudó a cumplir con todas las normativas ambientales y ganar licitaciones importantes. Soporte técnico excelente.",
+      avatar: ""
     }
   ],
 
   companyTypes: [
-    "Municipalidad",
-    "Empresa Privada",
-    "Cooperativa",
-    "Organismo Provincial",
+    "Empresa de Recolección",
+    "Empresa de Reciclaje",
+    "Centro de Acopio",
+    "Planta de Tratamiento",
+    "Gestor Ambiental",
+    "Transportista de Residuos",
+    "Consultoría Ambiental",
     "Otro"
+  ],
+
+  modules: [
+    { name: "Gestión de Clientes y Contratos", icon: "Users" },
+    { name: "Planificación de Rutas", icon: "MapPin" },
+    { name: "Control de Flota", icon: "Truck" },
+    { name: "Facturación Electrónica", icon: "FileText" },
+    { name: "Business Intelligence", icon: "BarChart3" },
+    { name: "Trazabilidad de Residuos", icon: "Recycle" },
+    { name: "App Móvil para Operarios", icon: "Smartphone" },
+    { name: "Gestión de Mantenimiento", icon: "Wrench" },
+    { name: "Reportes Regulatorios", icon: "Shield" },
+    { name: "CRM y Atención al Cliente", icon: "MessageCircle" },
+    { name: "Gestión de Inventarios", icon: "Package" },
+    { name: "Portal Web para Clientes", icon: "Globe" }
   ]
 };
