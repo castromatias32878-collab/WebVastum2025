@@ -17,10 +17,13 @@ contactos_collection = db.contactos
 
 # Tipos de empresa válidos
 VALID_COMPANY_TYPES = [
-    "Municipalidad",
-    "Empresa Privada",
-    "Cooperativa",
-    "Organismo Provincial",
+    "Empresa de Recolección",
+    "Empresa de Reciclaje",
+    "Centro de Acopio",
+    "Planta de Tratamiento",
+    "Gestor Ambiental",
+    "Transportista de Residuos",
+    "Consultoría Ambiental",
     "Otro"
 ]
 
