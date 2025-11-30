@@ -1,0 +1,289 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
+import { Textarea } from '../components/ui/textarea';
+import { Label } from '../components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
+import { Badge } from '../components/ui/badge';
+import { toast } from 'sonner';
+import { 
+  CheckCircle2,
+  Truck,
+  Users,
+  BarChart3,
+  Recycle,
+  MapPin,
+  TrendingUp
+} from 'lucide-react';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
+
+const companyTypes = [
+  "Empresa de Recolección",
+  "Empresa de Reciclaje",
+  "Centro de Acopio",
+  "Planta de Tratamiento",
+  "Gestor Ambiental",
+  "Transportista de Residuos",
+  "Consultoría Ambiental",
+  "Otro"
+];
+
+const benefits = [
+  { icon: TrendingUp, text: "Aumenta tu rentabilidad hasta 35%" },
+  { icon: Truck, text: "Optimiza rutas y reduce costos operativos" },
+  { icon: BarChart3, text: "Dashboards en tiempo real" },
+  { icon: Users, text: "Gestión integral de clientes" },
+  { icon: MapPin, text: "Control total de flota" },
+  { icon: Recycle, text: "Trazabilidad completa de residuos" }
+];
+
+const SimpleLanding = () => {
+  const [formData, setFormData] = useState({
+    nombre: '',
+    email: '',
+    telefono: '',
+    empresa: '',
+    tipoEmpresa: '',
+    mensaje: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSelectChange = (value) => {
+    setFormData(prev => ({ ...prev, tipoEmpresa: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!formData.nombre || !formData.email || !formData.telefono || !formData.empresa || !formData.tipoEmpresa) {
+      toast.error('Por favor completa todos los campos obligatorios');
+      return;
+    }
+
+    try {
+      const response = await axios.post(`${API}/contacto`, formData);
+      
+      if (response.data.success) {
+        toast.success('¡Gracias! Nos comunicaremos pronto para agendar tu demo.');
+        setFormData({
+          nombre: '',
+          email: '',
+          telefono: '',
+          empresa: '',
+          tipoEmpresa: '',
+          mensaje: ''
+        });
+      }
+    } catch (error) {
+      console.error('Error al enviar formulario:', error);
+      const errorMessage = error.response?.data?.detail || 'Error al enviar. Intenta nuevamente.';
+      toast.error(errorMessage);
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex">
+      {/* Columna Izquierda - Formulario */}
+      <div className="w-full lg:w-1/2 bg-white p-8 lg:p-16 flex flex-col justify-center">
+        <div className="max-w-xl mx-auto w-full">
+          {/* Logo */}
+          <div className="mb-8">
+            <img src="/logo.2.jpg" alt="VASTUM Logo" className="h-16 w-auto mb-4" />
+            <Badge className="bg-cyan-50 text-cyan-700 border-cyan-200 px-3 py-1 text-xs font-semibold">
+              Software Argentino · San Juan
+            </Badge>
+          </div>
+
+          {/* Título */}
+          <div className="mb-8">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+              Gestiona tu empresa de residuos fácil y rápido
+            </h1>
+            <p className="text-lg text-gray-600 mb-2">
+              ¡Solicita tu demo gratuita!
+            </p>
+            <p className="text-sm text-gray-500">
+              (Sin compromiso · Respuesta en 24hs)
+            </p>
+          </div>
+
+          {/* Formulario */}
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div>
+              <Label htmlFor="nombre" className="text-gray-700 font-medium mb-1.5 block">
+                Nombre completo *
+              </Label>
+              <Input
+                id="nombre"
+                name="nombre"
+                value={formData.nombre}
+                onChange={handleInputChange}
+                placeholder="Juan Pérez"
+                required
+                className="h-12 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+              />
+            </div>
+
+            <div>
+              <Label htmlFor="email" className="text-gray-700 font-medium mb-1.5 block">
+                Email *
+              </Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                placeholder="juan@empresa.com"
+                required
+                className="h-12 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+              />
+            </div>
+
+            <div>
+              <Label htmlFor="telefono" className="text-gray-700 font-medium mb-1.5 block">
+                Teléfono *
+              </Label>
+              <Input
+                id="telefono"
+                name="telefono"
+                type="tel"
+                value={formData.telefono}
+                onChange={handleInputChange}
+                placeholder="+54 9 264 123-4567"
+                required
+                className="h-12 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+              />
+            </div>
+
+            <div>
+              <Label htmlFor="empresa" className="text-gray-700 font-medium mb-1.5 block">
+                Empresa *
+              </Label>
+              <Input
+                id="empresa"
+                name="empresa"
+                value={formData.empresa}
+                onChange={handleInputChange}
+                placeholder="Nombre de tu empresa"
+                required
+                className="h-12 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+              />
+            </div>
+
+            <div>
+              <Label htmlFor="tipoEmpresa" className="text-gray-700 font-medium mb-1.5 block">
+                Tipo de empresa *
+              </Label>
+              <Select value={formData.tipoEmpresa} onValueChange={handleSelectChange} required>
+                <SelectTrigger className="h-12 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500">
+                  <SelectValue placeholder="Selecciona tu rubro" />
+                </SelectTrigger>
+                <SelectContent>
+                  {companyTypes.map((type) => (
+                    <SelectItem key={type} value={type}>
+                      {type}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div>
+              <Label htmlFor="mensaje" className="text-gray-700 font-medium mb-1.5 block">
+                ¿Qué necesita tu empresa? (Opcional)
+              </Label>
+              <Textarea
+                id="mensaje"
+                name="mensaje"
+                value={formData.mensaje}
+                onChange={handleInputChange}
+                placeholder="Cuéntanos brevemente sobre tu operación..."
+                rows={3}
+                className="border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+              />
+            </div>
+
+            <Button 
+              type="submit" 
+              size="lg" 
+              className="w-full bg-cyan-600 hover:bg-cyan-700 text-white text-lg h-14 font-semibold shadow-lg hover:shadow-xl transition-all"
+            >
+              Solicitar Demo Gratuita
+            </Button>
+
+            <p className="text-xs text-gray-500 text-center">
+              Al registrarte, aceptas nuestros términos y condiciones
+            </p>
+          </form>
+        </div>
+      </div>
+
+      {/* Columna Derecha - Visual/Imagen */}
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-cyan-600 to-cyan-700 relative overflow-hidden">
+        {/* Contenido Visual */}
+        <div className="relative z-10 p-16 flex flex-col justify-center text-white w-full">
+          <div className="max-w-xl">
+            <h2 className="text-5xl font-bold mb-6 leading-tight">
+              Software ERP de Gestión de Residuos
+            </h2>
+            <p className="text-2xl mb-8 text-cyan-50 font-light">
+              La solución integral para empresas que quieren crecer y ser más rentables
+            </p>
+
+            {/* Beneficios destacados */}
+            <div className="space-y-4 mb-10">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                  <div className="flex-shrink-0">
+                    <benefit.icon className="h-6 w-6 text-white" />
+                  </div>
+                  <span className="text-lg font-medium">{benefit.text}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
+              <div>
+                <div className="text-4xl font-bold mb-1">500+</div>
+                <div className="text-cyan-100 text-sm">Empresas</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold mb-1">15+</div>
+                <div className="text-cyan-100 text-sm">Años</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold mb-1">24/7</div>
+                <div className="text-cyan-100 text-sm">Soporte</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Decoración de fondo */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 right-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+
+        {/* Imagen de fondo sutil */}
+        <div 
+          className="absolute inset-0 opacity-20 bg-cover bg-center mix-blend-overlay"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1611284446314-60a58ac0deb9)',
+          }}
+        ></div>
+      </div>
+    </div>
+  );
+};
+
+export default SimpleLanding;
