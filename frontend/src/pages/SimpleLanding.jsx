@@ -32,12 +32,9 @@ const companyTypes = [
 ];
 
 const benefits = [
-  { icon: TrendingUp, text: "Aumenta tu rentabilidad hasta 35%" },
-  { icon: Truck, text: "Optimiza rutas y reduce costos operativos" },
-  { icon: BarChart3, text: "Dashboards en tiempo real" },
-  { icon: Users, text: "Gestión integral de clientes" },
-  { icon: MapPin, text: "Control total de flota" },
-  { icon: Recycle, text: "Trazabilidad completa de residuos" }
+  { icon: TrendingUp, text: "Reduce los tiempos del proceso en un 60%" },
+  { icon: Truck, text: "Optimiza el rastreo de cada envío a disposición final de los residuos" },
+  { icon: FileText, text: "Permite registrar documentos y subir certificados, remitos y otros registros" }
 ];
 
 const SimpleLanding = () => {
