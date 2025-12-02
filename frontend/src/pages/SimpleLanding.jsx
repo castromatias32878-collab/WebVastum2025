@@ -86,30 +86,32 @@ const SimpleLanding = () => {
   };
 
   return (
-    <div className="min-h-screen flex">
-      {/* Columna Izquierda - Formulario */}
-      <div className="w-full lg:w-1/2 bg-white p-8 lg:p-16 flex flex-col justify-center">
-        <div className="max-w-xl mx-auto w-full">
-          {/* Logo */}
-          <div className="mb-8">
-            <img src="/logo.2.jpg" alt="VASTUM Logo" className="h-16 w-auto mb-4" />
-            <Badge className="bg-cyan-50 text-cyan-700 border-cyan-200 px-3 py-1 text-xs font-semibold">
-              Software Argentino · San Juan
-            </Badge>
-          </div>
+    <div className="min-h-screen flex bg-gray-100 p-4 md:p-8">
+      {/* Contenedor con marco blanco */}
+      <div className="w-full max-w-7xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col lg:flex-row">
+        {/* Columna Izquierda - Formulario */}
+        <div className="w-full lg:w-1/2 p-6 lg:p-12 flex flex-col justify-center">
+          <div className="max-w-lg mx-auto w-full">
+            {/* Logo */}
+            <div className="mb-6">
+              <img src="/logo.2.jpg" alt="VASTUM Logo" className="h-20 w-auto mb-3" />
+              <Badge className="bg-cyan-50 text-cyan-700 border-cyan-200 px-3 py-1 text-xs font-semibold">
+                Software Argentino · San Juan
+              </Badge>
+            </div>
 
-          {/* Título */}
-          <div className="mb-8">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-              Gestiona tu empresa de residuos fácil y rápido
-            </h1>
-            <p className="text-lg text-gray-600 mb-2">
-              ¡Solicita tu demo gratuita!
-            </p>
-            <p className="text-sm text-gray-500">
-              (Sin compromiso · Respuesta en 24hs)
-            </p>
-          </div>
+            {/* Título */}
+            <div className="mb-6">
+              <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3 leading-tight">
+                Gestiona los residuos de tu empresa de manera más fácil, rápida y eficaz
+              </h1>
+              <p className="text-base text-gray-600 mb-2">
+                ¡Solicita tu demo gratuita!
+              </p>
+              <p className="text-sm text-gray-500">
+                (Sin compromiso · Respuesta en 24hs)
+              </p>
+            </div>
 
           {/* Formulario */}
           <form onSubmit={handleSubmit} className="space-y-5">
