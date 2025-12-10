@@ -60,8 +60,9 @@ async def create_status_check(input: StatusCheckCreate):
 
 @api_router.get("/status", response_model=List[StatusCheck])
 async def get_status_checks():
-    # Exclude MongoDB's _id field from the query results
-    status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
+    # Proyección para optimizar la consulta
+    projection = {"_id": 1, "id": 1, "client_name": 1, "timestamp": 1}
+    status_checks = await db.status_checks.find({}, projection).to_list(1000)
     
     # Convert ISO string timestamps back to datetime objects
     for check in status_checks:
