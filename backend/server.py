@@ -27,6 +27,7 @@ api_router = APIRouter(prefix="/api")
 
 # Import contact routes
 from routes.contact_routes import router as contact_router
+from routes.logo_routes import router as logo_router
 
 
 # Define Models
