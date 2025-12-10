@@ -61,8 +61,74 @@ const AdminPanel = () => {
     }
   };
 
+  const fetchLogos = async () => {
+    try {
+      const response = await axios.get(`${API}/logos`);
+      if (response.data.success) {
+        setLogos(response.data.logos);
+      }
+    } catch (error) {
+      console.error('Error al cargar logos:', error);
+      toast.error('Error al cargar los logos');
+    }
+  };
+
+  const handleLogoUpload = async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    if (!file.type.startsWith('image/')) {
+      toast.error('Por favor selecciona una imagen válida');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onloadend = async () => {
+      try {
+        setUploadingLogo(true);
+        const base64String = reader.result;
+        
+        const response = await axios.post(`${API}/logos`, {
+          nombre: file.name,
+          imagen_base64: base64String
+        });
+
+        if (response.data.success) {
+          toast.success('Logo agregado exitosamente');
+          fetchLogos();
+        }
+      } catch (error) {
+        console.error('Error al subir logo:', error);
+        toast.error('Error al subir el logo');
+      } finally {
+        setUploadingLogo(false);
+        event.target.value = '';
+      }
+    };
+
+    reader.readAsDataURL(file);
+  };
+
+  const handleDeleteLogo = async (logoId, logoNombre) => {
+    if (!window.confirm(`¿Seguro que quieres eliminar el logo de ${logoNombre}?`)) {
+      return;
+    }
+
+    try {
+      const response = await axios.delete(`${API}/logos/${logoId}`);
+      if (response.data.success) {
+        toast.success('Logo eliminado exitosamente');
+        fetchLogos();
+      }
+    } catch (error) {
+      console.error('Error al eliminar logo:', error);
+      toast.error('Error al eliminar el logo');
+    }
+  };
+
   useEffect(() => {
     fetchContactos();
+    fetchLogos();
   }, []);
 
   const formatDate = (dateString) => {
