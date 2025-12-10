@@ -76,6 +76,9 @@ app.include_router(api_router)
 # Include contact routes
 app.include_router(contact_router)
 
+# Include logo routes
+app.include_router(logo_router)
+
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
