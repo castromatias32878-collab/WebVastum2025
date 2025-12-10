@@ -99,8 +99,8 @@ const SimpleLanding = () => {
             </div>
 
             {/* Título */}
-            <div className="mb-3">
-              <h1 className="text-xl lg:text-2xl font-bold text-gray-900 mb-1.5 leading-tight">
+            <div className="mb-2.5">
+              <h1 className="text-lg font-bold text-gray-900 mb-1 leading-tight">
                 Gestiona los residuos de tu empresa de manera más fácil, rápida y eficaz
               </h1>
               <p className="text-xs text-gray-600 mb-0.5">
