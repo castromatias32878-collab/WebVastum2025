@@ -301,7 +301,7 @@ const SimpleLanding = () => {
                     </div>
                   </div>
                 </div>
-                <p className="text-xs text-cyan-50 text-center mt-3 leading-relaxed">
+                <p className="text-sm text-cyan-50 text-center mt-3 leading-relaxed">
                   Software Vastum es un producto desarrollado por Servicios Informáticos Vastum SAS con Patente Intelectual Registrada en Argentina
                 </p>
               </div>
