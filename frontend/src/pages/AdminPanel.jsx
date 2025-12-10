@@ -12,7 +12,10 @@ import {
   Calendar,
   MessageSquare,
   RefreshCw,
-  Download
+  Download,
+  Upload,
+  Trash2,
+  Image as ImageIcon
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
