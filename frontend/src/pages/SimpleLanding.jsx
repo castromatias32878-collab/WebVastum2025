@@ -87,26 +87,26 @@ const SimpleLanding = () => {
   };
 
   return (
-    <div className="min-h-screen flex bg-gray-100 p-4 md:p-8">
+    <div className="min-h-screen flex bg-gray-100 p-3 md:p-6">
       {/* Contenedor con marco blanco */}
       <div className="w-full max-w-7xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col lg:flex-row">
         {/* Columna Izquierda - Formulario */}
-        <div className="w-full lg:w-1/2 p-6 lg:p-12 flex flex-col justify-center">
+        <div className="w-full lg:w-1/2 p-4 lg:p-8 flex flex-col justify-center">
           <div className="max-w-lg mx-auto w-full">
             {/* Logo */}
-            <div className="mb-6">
-              <img src="/isologotipo-vastum.png" alt="VASTUM Isologotipo" className="h-60 w-auto" />
+            <div className="mb-4">
+              <img src="/isologotipo-vastum.png" alt="VASTUM Isologotipo" className="h-32 w-auto" />
             </div>
 
             {/* Título */}
-            <div className="mb-6">
-              <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3 leading-tight">
+            <div className="mb-4">
+              <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2 leading-tight">
                 Gestiona los residuos de tu empresa de manera más fácil, rápida y eficaz
               </h1>
-              <p className="text-base text-gray-600 mb-2">
+              <p className="text-sm text-gray-600 mb-1">
                 ¡Solicita tu demo gratuita!
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-xs text-gray-500">
                 (Sin compromiso · Respuesta en 24hs)
               </p>
             </div>
