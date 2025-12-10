@@ -112,7 +112,7 @@ const SimpleLanding = () => {
             </div>
 
           {/* Formulario */}
-          <form onSubmit={handleSubmit} className="space-y-2.5">
+          <form onSubmit={handleSubmit} className="space-y-2">
             <div>
               <Label htmlFor="nombre" className="text-gray-700 font-medium mb-0.5 block text-xs">
                 Nombre completo *
@@ -124,7 +124,7 @@ const SimpleLanding = () => {
                 onChange={handleInputChange}
                 placeholder="Juan Pérez"
                 required
-                className="h-9 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 text-sm"
+                className="h-8 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 text-xs"
               />
             </div>
 
@@ -140,7 +140,7 @@ const SimpleLanding = () => {
                 onChange={handleInputChange}
                 placeholder="juan@empresa.com"
                 required
-                className="h-9 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 text-sm"
+                className="h-8 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 text-xs"
               />
             </div>
 
@@ -156,7 +156,7 @@ const SimpleLanding = () => {
                 onChange={handleInputChange}
                 placeholder="+54 9 264 123-4567"
                 required
-                className="h-9 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 text-sm"
+                className="h-8 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 text-xs"
               />
             </div>
 
@@ -171,7 +171,7 @@ const SimpleLanding = () => {
                 onChange={handleInputChange}
                 placeholder="Nombre de tu empresa"
                 required
-                className="h-9 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 text-sm"
+                className="h-8 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 text-xs"
               />
             </div>
 
@@ -180,7 +180,7 @@ const SimpleLanding = () => {
                 Tipo de empresa *
               </Label>
               <Select value={formData.tipoEmpresa} onValueChange={handleSelectChange} required>
-                <SelectTrigger className="h-9 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 text-sm">
+                <SelectTrigger className="h-8 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 text-xs">
                   <SelectValue placeholder="Selecciona tu rubro" />
                 </SelectTrigger>
                 <SelectContent>
@@ -202,22 +202,22 @@ const SimpleLanding = () => {
                 name="mensaje"
                 value={formData.mensaje}
                 onChange={handleInputChange}
-                placeholder="Cuéntanos brevemente sobre tu operación..."
-                rows={2}
-                className="border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 text-sm"
+                placeholder="Cuéntanos brevemente..."
+                rows={1}
+                className="border-gray-300 focus:border-cyan-500 focus:ring-cyan-500 text-xs"
               />
             </div>
 
             <Button 
               type="submit" 
               size="lg" 
-              className="w-full bg-cyan-600 hover:bg-cyan-700 text-white text-sm h-10 font-semibold shadow-lg hover:shadow-xl transition-all"
+              className="w-full bg-cyan-600 hover:bg-cyan-700 text-white text-xs h-9 font-semibold shadow-lg hover:shadow-xl transition-all"
             >
               Solicitar Demo Gratuita
             </Button>
 
-            <div className="flex justify-center my-1.5">
-              <img src="/logo.2.jpg" alt="VASTUM" className="h-7 w-auto" />
+            <div className="flex justify-center my-1">
+              <img src="/logo.2.jpg" alt="VASTUM" className="h-6 w-auto" />
             </div>
 
             <p className="text-xs text-gray-500 text-center leading-tight">
