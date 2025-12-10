@@ -94,16 +94,16 @@ const SimpleLanding = () => {
         <div className="w-full lg:w-1/2 p-4 lg:p-8 flex flex-col justify-center">
           <div className="max-w-lg mx-auto w-full">
             {/* Logo */}
-            <div className="mb-4">
-              <img src="/isologotipo-vastum.png" alt="VASTUM Isologotipo" className="h-32 w-auto" />
+            <div className="mb-3">
+              <img src="/isologotipo-vastum.png" alt="VASTUM Isologotipo" className="h-48 w-auto" />
             </div>
 
             {/* Título */}
-            <div className="mb-4">
-              <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2 leading-tight">
+            <div className="mb-3">
+              <h1 className="text-xl lg:text-2xl font-bold text-gray-900 mb-1.5 leading-tight">
                 Gestiona los residuos de tu empresa de manera más fácil, rápida y eficaz
               </h1>
-              <p className="text-sm text-gray-600 mb-1">
+              <p className="text-xs text-gray-600 mb-0.5">
                 ¡Solicita tu demo gratuita!
               </p>
               <p className="text-xs text-gray-500">
