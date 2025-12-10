@@ -91,7 +91,7 @@ const SimpleLanding = () => {
       {/* Contenedor con marco blanco */}
       <div className="w-full max-w-7xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col lg:flex-row">
         {/* Columna Izquierda - Formulario */}
-        <div className="w-full lg:w-1/2 p-4 lg:p-8 flex flex-col justify-center">
+        <div className="w-full lg:w-1/2 p-4 lg:p-6 flex flex-col justify-center">
           <div className="max-w-lg mx-auto w-full">
             {/* Logo */}
             <div className="mb-3">
