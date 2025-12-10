@@ -95,10 +95,7 @@ const SimpleLanding = () => {
           <div className="max-w-lg mx-auto w-full">
             {/* Logo */}
             <div className="mb-6">
-              <img src="/isologotipo-vastum.png" alt="VASTUM Isologotipo" className="h-24 w-auto mb-3" />
-              <Badge className="bg-cyan-50 text-cyan-700 border-cyan-200 px-3 py-1 text-xs font-semibold">
-                Software Argentino · San Juan
-              </Badge>
+              <img src="/isologotipo-vastum.png" alt="VASTUM Isologotipo" className="h-60 w-auto" />
             </div>
 
             {/* Título */}
