@@ -238,30 +238,30 @@ const SimpleLanding = () => {
             </p>
 
             {/* Beneficios destacados */}
-            <div className="space-y-4 mb-10">
+            <div className="space-y-3 mb-8">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                  <div className="flex-shrink-0">
-                    <benefit.icon className="h-6 w-6 text-white" />
+                <div key={index} className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3.5">
+                  <div className="flex-shrink-0 mt-0.5">
+                    <benefit.icon className="h-5 w-5 text-white" />
                   </div>
-                  <span className="text-lg font-medium">{benefit.text}</span>
+                  <span className="text-base font-medium leading-snug">{benefit.text}</span>
                 </div>
               ))}
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
+            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/20">
               <div>
-                <div className="text-4xl font-bold mb-1">500+</div>
-                <div className="text-cyan-100 text-sm">Empresas</div>
+                <div className="text-3xl font-bold mb-1">500+</div>
+                <div className="text-cyan-100 text-xs">Empresas</div>
               </div>
               <div>
-                <div className="text-4xl font-bold mb-1">15+</div>
-                <div className="text-cyan-100 text-sm">Años</div>
+                <div className="text-3xl font-bold mb-1">15+</div>
+                <div className="text-cyan-100 text-xs">Años</div>
               </div>
               <div>
-                <div className="text-4xl font-bold mb-1">24/7</div>
-                <div className="text-cyan-100 text-sm">Soporte</div>
+                <div className="text-3xl font-bold mb-1">24/7</div>
+                <div className="text-cyan-100 text-xs">Soporte</div>
               </div>
             </div>
           </div>
