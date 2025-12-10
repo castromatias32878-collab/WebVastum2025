@@ -112,7 +112,7 @@ const SimpleLanding = () => {
             </div>
 
           {/* Formulario */}
-          <form onSubmit={handleSubmit} className="space-y-3">
+          <form onSubmit={handleSubmit} className="space-y-2.5">
             <div>
               <Label htmlFor="nombre" className="text-gray-700 font-medium mb-0.5 block text-xs">
                 Nombre completo *
