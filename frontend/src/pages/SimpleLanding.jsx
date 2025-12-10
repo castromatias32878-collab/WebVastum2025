@@ -230,7 +230,7 @@ const SimpleLanding = () => {
       {/* Columna Derecha - Visual/Imagen */}
       <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-cyan-600 to-cyan-700 relative overflow-hidden">
         {/* Contenido Visual */}
-        <div className="relative z-10 p-8 flex flex-col justify-center text-white w-full">
+        <div className="relative z-10 p-6 flex flex-col justify-center text-white w-full">
           <div className="max-w-xl">
             <h2 className="text-3xl font-bold mb-4 leading-tight">
               Software de Gestión para la Trazabilidad de Residuos en Empresas
