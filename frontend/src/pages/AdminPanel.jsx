@@ -25,8 +25,10 @@ const API = `${BACKEND_URL}/api`;
 const AdminPanel = () => {
   const navigate = useNavigate();
   const [contactos, setContactos] = useState([]);
+  const [logos, setLogos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const [uploadingLogo, setUploadingLogo] = useState(false);
 
   // Verificar autenticación
   useEffect(() => {
