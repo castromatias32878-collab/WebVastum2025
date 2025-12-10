@@ -51,7 +51,16 @@ async def get_logos():
     Obtiene todos los logos para el slider
     """
     try:
-        logos = await logos_collection.find().sort("created_at", 1).to_list(1000)
+        # Proyección para optimizar la consulta
+        projection = {
+            "_id": 1,
+            "id": 1,
+            "nombre": 1,
+            "imagen_base64": 1,
+            "created_at": 1
+        }
+        
+        logos = await logos_collection.find({}, projection).sort("created_at", 1).to_list(1000)
         
         # Convertir ObjectId a string
         for logo in logos:
