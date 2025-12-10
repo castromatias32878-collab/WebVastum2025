@@ -276,9 +276,9 @@ const SimpleLanding = () => {
 
         {/* Imagen de fondo sutil */}
         <div 
-          className="absolute inset-0 opacity-20 bg-cover bg-center mix-blend-overlay"
+          className="absolute inset-0 opacity-25 bg-cover bg-center mix-blend-overlay"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1611284446314-60a58ac0deb9)',
+            backgroundImage: 'url(/residuos-industrial.png)',
           }}
         ></div>
       </div>
