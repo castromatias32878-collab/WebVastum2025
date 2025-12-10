@@ -216,11 +216,11 @@ const SimpleLanding = () => {
               Solicitar Demo Gratuita
             </Button>
 
-            <div className="flex justify-center my-2">
-              <img src="/logo.2.jpg" alt="VASTUM" className="h-8 w-auto" />
+            <div className="flex justify-center my-1.5">
+              <img src="/logo.2.jpg" alt="VASTUM" className="h-7 w-auto" />
             </div>
 
-            <p className="text-xs text-gray-500 text-center">
+            <p className="text-xs text-gray-500 text-center leading-tight">
               Al registrarte, aceptas nuestros términos y condiciones
             </p>
           </form>
