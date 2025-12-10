@@ -122,7 +122,16 @@ const AdminPanel = () => {
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver a la Landing
             </Button>
-            <img src="/isologotipo-vastum.png" alt="VASTUM" className="h-12 w-auto" />
+            <div className="flex items-center gap-4">
+              <img src="/isologotipo-vastum.png" alt="VASTUM" className="h-12 w-auto" />
+              <Button
+                variant="outline"
+                onClick={handleLogout}
+                className="border-red-600 text-red-600 hover:bg-red-50"
+              >
+                Cerrar Sesión
+              </Button>
+            </div>
           </div>
           
           <div className="flex items-center justify-between">
