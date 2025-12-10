@@ -25,6 +25,20 @@ const AdminPanel = () => {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
 
+  // Verificar autenticación
+  useEffect(() => {
+    const isAuthenticated = localStorage.getItem('vastum_admin_auth');
+    if (!isAuthenticated) {
+      navigate('/admin/login');
+    }
+  }, [navigate]);
+
+  const handleLogout = () => {
+    localStorage.removeItem('vastum_admin_auth');
+    toast.success('Sesión cerrada');
+    navigate('/');
+  };
+
   const fetchContactos = async () => {
     try {
       setRefreshing(true);
