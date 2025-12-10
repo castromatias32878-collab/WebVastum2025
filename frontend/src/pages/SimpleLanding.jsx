@@ -257,19 +257,21 @@ const SimpleLanding = () => {
               ))}
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-3 pt-4 border-t border-white/20">
-              <div>
-                <div className="text-2xl font-bold mb-0.5">500+</div>
-                <div className="text-cyan-100 text-xs">Empresas</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold mb-0.5">15+</div>
-                <div className="text-cyan-100 text-xs">Años</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold mb-0.5">24/7</div>
-                <div className="text-cyan-100 text-xs">Soporte</div>
+            {/* Logo Slider */}
+            <div className="pt-6 border-t border-white/20">
+              <p className="text-sm text-cyan-100 mb-4 text-center">Empresas que confían en VASTUM</p>
+              <div className="overflow-hidden relative">
+                <div className="flex animate-scroll gap-8 items-center">
+                  <img src="/logo-zenit.jpg" alt="Zenit" className="h-12 w-auto object-contain filter brightness-0 invert opacity-80 flex-shrink-0" />
+                  <img src="/logo-sinec.png" alt="SINEC" className="h-12 w-auto object-contain filter brightness-0 invert opacity-80 flex-shrink-0" />
+                  <img src="/logo-genneia.png" alt="Genneia" className="h-12 w-auto object-contain filter brightness-0 invert opacity-80 flex-shrink-0" />
+                  <img src="/logo-plus.jpeg" alt="Plus Servicios" className="h-12 w-auto object-contain filter brightness-0 invert opacity-80 flex-shrink-0" />
+                  {/* Duplicar para efecto infinito */}
+                  <img src="/logo-zenit.jpg" alt="Zenit" className="h-12 w-auto object-contain filter brightness-0 invert opacity-80 flex-shrink-0" />
+                  <img src="/logo-sinec.png" alt="SINEC" className="h-12 w-auto object-contain filter brightness-0 invert opacity-80 flex-shrink-0" />
+                  <img src="/logo-genneia.png" alt="Genneia" className="h-12 w-auto object-contain filter brightness-0 invert opacity-80 flex-shrink-0" />
+                  <img src="/logo-plus.jpeg" alt="Plus Servicios" className="h-12 w-auto object-contain filter brightness-0 invert opacity-80 flex-shrink-0" />
+                </div>
               </div>
             </div>
           </div>
