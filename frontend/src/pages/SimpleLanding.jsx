@@ -219,6 +219,10 @@ const SimpleLanding = () => {
               Solicitar Demo Gratuita
             </Button>
 
+            <div className="flex justify-center my-4">
+              <img src="/logo.2.jpg" alt="VASTUM" className="h-10 w-auto" />
+            </div>
+
             <p className="text-xs text-gray-500 text-center pt-1">
               Al registrarte, aceptas nuestros términos y condiciones
             </p>
