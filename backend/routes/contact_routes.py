@@ -78,7 +78,20 @@ async def get_contacts():
     Obtiene todos los contactos (endpoint para administración)
     """
     try:
-        contactos = await contactos_collection.find().sort("created_at", -1).to_list(1000)
+        # Proyección para optimizar la consulta - traer solo campos necesarios
+        projection = {
+            "_id": 1,
+            "id": 1,
+            "nombre": 1,
+            "email": 1,
+            "telefono": 1,
+            "empresa": 1,
+            "tipo_empresa": 1,
+            "mensaje": 1,
+            "created_at": 1
+        }
+        
+        contactos = await contactos_collection.find({}, projection).sort("created_at", -1).to_list(1000)
         
         # Convertir ObjectId a string y formatear
         for contacto in contactos:
