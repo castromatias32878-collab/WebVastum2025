@@ -304,6 +304,20 @@ const SimpleLanding = () => {
                 <p className="text-sm text-cyan-50 text-center mt-3 leading-relaxed">
                   Software Vastum es un producto desarrollado por Servicios Informáticos Vastum SAS con Patente Intelectual Registrada en Argentina
                 </p>
+                <div className="flex justify-center mt-4">
+                  <a 
+                    href="https://www2.jus.gov.ar/dnda-sistemadeturnosweb" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="transition-opacity hover:opacity-80"
+                  >
+                    <img 
+                      src="/logo-dnda.png" 
+                      alt="DNDA - Dirección Nacional del Derecho de Autor" 
+                      className="h-16 w-auto object-contain"
+                    />
+                  </a>
+                </div>
               </div>
             )}
           </div>
