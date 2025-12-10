@@ -228,13 +228,13 @@ const SimpleLanding = () => {
       {/* Columna Derecha - Visual/Imagen */}
       <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-cyan-600 to-cyan-700 relative overflow-hidden">
         {/* Contenido Visual */}
-        <div className="relative z-10 p-16 flex flex-col justify-center text-white w-full">
+        <div className="relative z-10 p-12 flex flex-col justify-center text-white w-full">
           <div className="max-w-xl">
-            <h2 className="text-5xl font-bold mb-6 leading-tight">
-              Software ERP de Gestión de Residuos
+            <h2 className="text-4xl font-bold mb-5 leading-tight">
+              Software de Gestión para la Trazabilidad de Residuos en Empresas
             </h2>
-            <p className="text-2xl mb-8 text-cyan-50 font-light">
-              La solución integral para empresas que quieren crecer y ser más rentables
+            <p className="text-xl mb-8 text-cyan-50 font-light leading-relaxed">
+              La solución integral para gestionar la trazabilidad y seguimiento organizado de los residuos dentro y fuera de una empresa con base en Argentina
             </p>
 
             {/* Beneficios destacados */}
