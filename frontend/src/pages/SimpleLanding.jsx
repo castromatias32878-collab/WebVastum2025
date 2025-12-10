@@ -14,7 +14,8 @@ import {
   BarChart3,
   Recycle,
   MapPin,
-  TrendingUp
+  TrendingUp,
+  FileText
 } from 'lucide-react';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
