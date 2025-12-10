@@ -219,7 +219,7 @@ const SimpleLanding = () => {
             <div className="flex flex-col items-center my-1">
               <img src="/logo.2.jpg" alt="VASTUM" className="h-6 w-auto mb-1" />
               <a 
-                href="/admin" 
+                href="/admin/login" 
                 className="text-xs text-gray-400 hover:text-cyan-600 transition-colors"
               >
                 Acceso Admin
