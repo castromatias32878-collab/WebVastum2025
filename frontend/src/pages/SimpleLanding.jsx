@@ -309,12 +309,12 @@ const SimpleLanding = () => {
                     href="https://www2.jus.gov.ar/dnda-sistemadeturnosweb" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="transition-opacity hover:opacity-80"
+                    className="bg-white rounded-lg px-3 py-2 transition-opacity hover:opacity-80 shadow-sm"
                   >
                     <img 
                       src="/logo-dnda.png" 
                       alt="DNDA - Dirección Nacional del Derecho de Autor" 
-                      className="h-16 w-auto object-contain"
+                      className="h-6 w-auto object-contain"
                     />
                   </a>
                 </div>
