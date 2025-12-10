@@ -281,6 +281,7 @@ const SimpleLanding = () => {
           }}
         ></div>
       </div>
+      </div>
     </div>
   );
 };
