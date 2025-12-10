@@ -64,12 +64,7 @@ async def get_status_checks():
     projection = {"_id": 1, "id": 1, "client_name": 1, "timestamp": 1}
     status_checks = await db.status_checks.find({}, projection).to_list(1000)
     
-    # Convert ISO string timestamps back to datetime objects
-    for check in status_checks:
-        if isinstance(check['timestamp'], str):
-            check['timestamp'] = datetime.fromisoformat(check['timestamp'])
-    
-    return status_checks
+    return [StatusCheck(**status_check) for status_check in status_checks]
 
 # Include the router in the main app
 app.include_router(api_router)
