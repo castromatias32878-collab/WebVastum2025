@@ -48,6 +48,23 @@ const SimpleLanding = () => {
     mensaje: ''
   });
 
+  const [logos, setLogos] = useState([]);
+
+  useEffect(() => {
+    fetchLogos();
+  }, []);
+
+  const fetchLogos = async () => {
+    try {
+      const response = await axios.get(`${API}/logos`);
+      if (response.data.success) {
+        setLogos(response.data.logos);
+      }
+    } catch (error) {
+      console.error('Error al cargar logos:', error);
+    }
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
