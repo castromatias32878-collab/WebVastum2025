@@ -114,9 +114,9 @@ const SimpleLanding = () => {
             </div>
 
           {/* Formulario */}
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <Label htmlFor="nombre" className="text-gray-700 font-medium mb-1.5 block">
+              <Label htmlFor="nombre" className="text-gray-700 font-medium mb-1 block text-sm">
                 Nombre completo *
               </Label>
               <Input
@@ -126,12 +126,12 @@ const SimpleLanding = () => {
                 onChange={handleInputChange}
                 placeholder="Juan Pérez"
                 required
-                className="h-12 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+                className="h-11 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
               />
             </div>
 
             <div>
-              <Label htmlFor="email" className="text-gray-700 font-medium mb-1.5 block">
+              <Label htmlFor="email" className="text-gray-700 font-medium mb-1 block text-sm">
                 Email *
               </Label>
               <Input
@@ -142,12 +142,12 @@ const SimpleLanding = () => {
                 onChange={handleInputChange}
                 placeholder="juan@empresa.com"
                 required
-                className="h-12 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+                className="h-11 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
               />
             </div>
 
             <div>
-              <Label htmlFor="telefono" className="text-gray-700 font-medium mb-1.5 block">
+              <Label htmlFor="telefono" className="text-gray-700 font-medium mb-1 block text-sm">
                 Teléfono *
               </Label>
               <Input
@@ -158,12 +158,12 @@ const SimpleLanding = () => {
                 onChange={handleInputChange}
                 placeholder="+54 9 264 123-4567"
                 required
-                className="h-12 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+                className="h-11 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
               />
             </div>
 
             <div>
-              <Label htmlFor="empresa" className="text-gray-700 font-medium mb-1.5 block">
+              <Label htmlFor="empresa" className="text-gray-700 font-medium mb-1 block text-sm">
                 Empresa *
               </Label>
               <Input
@@ -173,16 +173,16 @@ const SimpleLanding = () => {
                 onChange={handleInputChange}
                 placeholder="Nombre de tu empresa"
                 required
-                className="h-12 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
+                className="h-11 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
               />
             </div>
 
             <div>
-              <Label htmlFor="tipoEmpresa" className="text-gray-700 font-medium mb-1.5 block">
+              <Label htmlFor="tipoEmpresa" className="text-gray-700 font-medium mb-1 block text-sm">
                 Tipo de empresa *
               </Label>
               <Select value={formData.tipoEmpresa} onValueChange={handleSelectChange} required>
-                <SelectTrigger className="h-12 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500">
+                <SelectTrigger className="h-11 border-gray-300 focus:border-cyan-500 focus:ring-cyan-500">
                   <SelectValue placeholder="Selecciona tu rubro" />
                 </SelectTrigger>
                 <SelectContent>
@@ -196,7 +196,7 @@ const SimpleLanding = () => {
             </div>
 
             <div>
-              <Label htmlFor="mensaje" className="text-gray-700 font-medium mb-1.5 block">
+              <Label htmlFor="mensaje" className="text-gray-700 font-medium mb-1 block text-sm">
                 ¿Qué necesita tu empresa? (Opcional)
               </Label>
               <Textarea
@@ -205,7 +205,7 @@ const SimpleLanding = () => {
                 value={formData.mensaje}
                 onChange={handleInputChange}
                 placeholder="Cuéntanos brevemente sobre tu operación..."
-                rows={3}
+                rows={2}
                 className="border-gray-300 focus:border-cyan-500 focus:ring-cyan-500"
               />
             </div>
@@ -213,12 +213,12 @@ const SimpleLanding = () => {
             <Button 
               type="submit" 
               size="lg" 
-              className="w-full bg-cyan-600 hover:bg-cyan-700 text-white text-lg h-14 font-semibold shadow-lg hover:shadow-xl transition-all"
+              className="w-full bg-cyan-600 hover:bg-cyan-700 text-white text-base h-12 font-semibold shadow-lg hover:shadow-xl transition-all"
             >
               Solicitar Demo Gratuita
             </Button>
 
-            <p className="text-xs text-gray-500 text-center">
+            <p className="text-xs text-gray-500 text-center pt-1">
               Al registrarte, aceptas nuestros términos y condiciones
             </p>
           </form>
