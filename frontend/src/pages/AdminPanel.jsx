@@ -290,6 +290,80 @@ const AdminPanel = () => {
           </Card>
         </div>
 
+        {/* Gestión de Logos */}
+        <div className="mb-8">
+          <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <ImageIcon className="h-6 w-6 text-cyan-600" />
+            Gestión de Logos del Slider ({logos.length})
+          </h2>
+          
+          <Card className="mb-6">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-4">
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleLogoUpload}
+                  disabled={uploadingLogo}
+                  id="logo-upload"
+                  className="hidden"
+                />
+                <label htmlFor="logo-upload">
+                  <Button
+                    as="span"
+                    disabled={uploadingLogo}
+                    className="bg-cyan-600 hover:bg-cyan-700 text-white cursor-pointer"
+                  >
+                    <Upload className="h-4 w-4 mr-2" />
+                    {uploadingLogo ? 'Subiendo...' : 'Cargar Nuevo Logo'}
+                  </Button>
+                </label>
+                <p className="text-sm text-gray-500">
+                  Los logos aparecerán en el slider de la landing page
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {logos.length === 0 ? (
+            <Card>
+              <CardContent className="p-12 text-center">
+                <ImageIcon className="h-16 w-16 text-gray-300 mx-auto mb-4" />
+                <p className="text-gray-500 text-lg">No hay logos cargados</p>
+                <p className="text-gray-400 text-sm mt-2">Sube el primer logo para el slider</p>
+              </CardContent>
+            </Card>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {logos.map((logo) => (
+                <Card key={logo.id} className="group relative hover:shadow-lg transition-shadow">
+                  <CardContent className="p-4">
+                    <div className="aspect-video bg-gray-50 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
+                      <img 
+                        src={logo.imagen_base64} 
+                        alt={logo.nombre}
+                        className="max-h-full max-w-full object-contain"
+                      />
+                    </div>
+                    <p className="text-sm font-medium text-gray-700 truncate mb-2">
+                      {logo.nombre}
+                    </p>
+                    <Button
+                      variant="destructive"
+                      size="sm"
+                      onClick={() => handleDeleteLogo(logo.id, logo.nombre)}
+                      className="w-full bg-red-600 hover:bg-red-700"
+                    >
+                      <Trash2 className="h-3 w-3 mr-1" />
+                      Eliminar
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
+        </div>
+
         {/* Lista de Contactos */}
         <div>
           <h2 className="text-xl font-bold text-gray-900 mb-4">
