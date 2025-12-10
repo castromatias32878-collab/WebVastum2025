@@ -230,39 +230,39 @@ const SimpleLanding = () => {
       {/* Columna Derecha - Visual/Imagen */}
       <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-cyan-600 to-cyan-700 relative overflow-hidden">
         {/* Contenido Visual */}
-        <div className="relative z-10 p-12 flex flex-col justify-center text-white w-full">
+        <div className="relative z-10 p-8 flex flex-col justify-center text-white w-full">
           <div className="max-w-xl">
-            <h2 className="text-4xl font-bold mb-5 leading-tight">
+            <h2 className="text-3xl font-bold mb-4 leading-tight">
               Software de Gestión para la Trazabilidad de Residuos en Empresas
             </h2>
-            <p className="text-xl mb-8 text-cyan-50 font-light leading-relaxed">
+            <p className="text-lg mb-6 text-cyan-50 font-light leading-relaxed">
               La solución integral para gestionar la trazabilidad y seguimiento organizado de los residuos dentro y fuera de una empresa con base en Argentina
             </p>
 
             {/* Beneficios destacados */}
-            <div className="space-y-3 mb-8">
+            <div className="space-y-2.5 mb-6">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3.5">
+                <div key={index} className="flex items-start gap-2.5 bg-white/10 backdrop-blur-sm rounded-lg p-2.5">
                   <div className="flex-shrink-0 mt-0.5">
-                    <benefit.icon className="h-5 w-5 text-white" />
+                    <benefit.icon className="h-4 w-4 text-white" />
                   </div>
-                  <span className="text-base font-medium leading-snug">{benefit.text}</span>
+                  <span className="text-sm font-medium leading-snug">{benefit.text}</span>
                 </div>
               ))}
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/20">
+            <div className="grid grid-cols-3 gap-3 pt-4 border-t border-white/20">
               <div>
-                <div className="text-3xl font-bold mb-1">500+</div>
+                <div className="text-2xl font-bold mb-0.5">500+</div>
                 <div className="text-cyan-100 text-xs">Empresas</div>
               </div>
               <div>
-                <div className="text-3xl font-bold mb-1">15+</div>
+                <div className="text-2xl font-bold mb-0.5">15+</div>
                 <div className="text-cyan-100 text-xs">Años</div>
               </div>
               <div>
-                <div className="text-3xl font-bold mb-1">24/7</div>
+                <div className="text-2xl font-bold mb-0.5">24/7</div>
                 <div className="text-cyan-100 text-xs">Soporte</div>
               </div>
             </div>
