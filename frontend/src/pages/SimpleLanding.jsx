@@ -216,8 +216,14 @@ const SimpleLanding = () => {
               Solicitar Demo Gratuita
             </Button>
 
-            <div className="flex justify-center my-1">
-              <img src="/logo.2.jpg" alt="VASTUM" className="h-6 w-auto" />
+            <div className="flex flex-col items-center my-1">
+              <img src="/logo.2.jpg" alt="VASTUM" className="h-6 w-auto mb-1" />
+              <a 
+                href="/admin" 
+                className="text-xs text-gray-400 hover:text-cyan-600 transition-colors"
+              >
+                Acceso Admin
+              </a>
             </div>
 
             <p className="text-xs text-gray-500 text-center leading-tight">
