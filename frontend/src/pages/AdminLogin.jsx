@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { toast } from 'sonner';
 import { Lock, ArrowLeft } from 'lucide-react';
 
-const ADMIN_PASSWORD = 'Argentina17_admin';
+const ADMIN_PASSWORD = process.env.REACT_APP_ADMIN_PASSWORD || 'Argentina17_admin';
 
 const AdminLogin = () => {
   const navigate = useNavigate();
