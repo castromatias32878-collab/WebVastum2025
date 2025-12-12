@@ -33,7 +33,7 @@ const companyTypes = [
 ];
 
 const benefits = [
-  { icon: TrendingUp, text: "Reduce los tiempos del proceso en un 60%" },
+  { icon: TrendingUp, text: "Reduce lo tiempo, centraliza la información y facilita auditorias, tanto internas como externas" },
   { icon: Truck, text: "Optimiza el rastreo de cada envío a disposición final de los residuos" },
   { icon: FileText, text: "Permite registrar documentos y subir certificados, remitos y otros registros" }
 ];
